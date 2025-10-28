@@ -1,5 +1,7 @@
+## 📁 Folder Structure
 
-'''PlpTaskManager/
+```bash
+PlpTaskManager/
 ├── src/
 │   ├── App.jsx
 │   ├── App.css
@@ -20,8 +22,7 @@
 ├── package.json
 ├── tailwind.config.js
 └── README.md
-'''
-
+```
 
 ⚙️ Setup Instructions
 1️⃣ Install Dependencies
