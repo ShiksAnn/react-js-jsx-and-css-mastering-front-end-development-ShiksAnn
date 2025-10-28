@@ -69,6 +69,9 @@ TailwindCSS utility classes used for responsive layouts
 
 Custom button variants (primary, secondary, danger, etc.)
 
+Live link
+https://plptaskmanager.vercel.app/
+
 Light/Dark mode toggle integrated with Tailwind’s dark: feature
 
 Mobile-first responsive design
