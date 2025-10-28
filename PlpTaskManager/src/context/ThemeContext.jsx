@@ -1,22 +1,39 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { ThemeContext } from "../context/ThemeContext";
+import { Sun, Moon } from "lucide-react"; // icons (install via: npm i lucide-react)
 
-const ThemeContext = createContext();
+const ThemeToggle = () => {
+  const { theme, setTheme } = useContext(ThemeContext);
 
-export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-
+  // Apply the theme to <html> for Tailwind darkMode:'class'
   useEffect(() => {
-    localStorage.setItem("theme", theme);
-    document.documentElement.classList.toggle("dark", theme === "dark");
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
   }, [theme]);
 
-  const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+  };
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
+    <button
+      onClick={toggleTheme}
+      className="theme-toggle flex items-center justify-center w-10 h-10"
+      title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+    >
+      {theme === "light" ? (
+        <Moon className="text-gray-800 w-5 h-5" />
+      ) : (
+        <Sun className="text-yellow-400 w-5 h-5" />
+      )}
+    </button>
   );
 };
 
-export const useTheme = () => useContext(ThemeContext);
+export default ThemeToggle;
+

@@ -1,70 +1,116 @@
-# React.js and Tailwind CSS Assignment
+![alt text](image.png)
+PlpTaskManager/
+├── src/
+│   ├── App.jsx
+│   ├── App.css
+│   ├── main.jsx
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Button.jsx
+│   │   └── TaskManager.jsx
+│   ├── context/
+│   │   └── ThemeContext.jsx
+│   ├── hooks/
+│   │   └── useLocalStorage.js
+│   └── pages/
+│       ├── Home.jsx
+│       └── ApiData.jsx
+├── index.html
+├── package.json
+├── tailwind.config.js
+└── README.md
 
-This assignment focuses on building a responsive React application using JSX and Tailwind CSS, implementing component architecture, state management, hooks, and API integration.
 
-## Assignment Overview
+⚙️ Setup Instructions
+1️⃣ Install Dependencies
 
-You will:
-1. Set up a React project with Vite and Tailwind CSS
-2. Create reusable UI components
-3. Implement state management using React hooks
-4. Integrate with external APIs
-5. Style your application using Tailwind CSS
+Make sure you have Node.js (v18 or higher) installed, then run:
 
-## Getting Started
+npm install
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install dependencies:
-   ```
-   npm install
-   ```
-4. Start the development server:
-   ```
-   npm run dev
-   ```
+2️⃣ Start Development Server
+npm run dev
 
-## Files Included
 
-- `Week3-Assignment.md`: Detailed assignment instructions
-- Starter files for your React application:
-  - Basic project structure
-  - Pre-configured Tailwind CSS
-  - Sample component templates
+This will start your Vite development server and open the app in your browser (usually at http://localhost:5173
+).
 
-## Requirements
+3️⃣ Build for Production
+npm run build
 
-- Node.js (v18 or higher)
-- npm or yarn
-- Modern web browser
-- Code editor (VS Code recommended)
 
-## Project Structure
+To preview the production build locally:
 
-```
-src/
-├── components/       # Reusable UI components
-├── pages/           # Page components
-├── hooks/           # Custom React hooks
-├── context/         # React context providers
-├── api/             # API integration functions
-├── utils/           # Utility functions
-└── App.jsx          # Main application component
-```
+npm run preview
 
-## Submission
+🧩 Features Overview
+🧠 Task Manager Component
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+A fully functional task management system with:
 
-1. Complete all required components and features
-2. Implement proper state management with hooks
-3. Integrate with at least one external API
-4. Style your application with Tailwind CSS
-5. Deploy your application and add the URL to your README.md
+✅ Add new tasks
 
-## Resources
+✏️ Mark tasks as completed
 
-- [React Documentation](https://react.dev/)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Vite Documentation](https://vitejs.dev/guide/)
-- [React Router Documentation](https://reactrouter.com/) 
+🗑️ Delete tasks
+
+🔍 Filter tasks: All / Active / Completed
+
+💾 Persistent storage using localStorage
+
+⚙️ Custom hook useLocalStorageTasks for clean logic
+
+🎨 Styling with Tailwind CSS
+
+TailwindCSS utility classes used for responsive layouts
+
+Custom button variants (primary, secondary, danger, etc.)
+
+Light/Dark mode toggle integrated with Tailwind’s dark: feature
+
+Mobile-first responsive design
+
+🌗 Theme Management
+
+Implemented using ThemeContext.jsx:
+
+Uses useContext to provide global theme state
+
+Persists user preference in localStorage
+
+Toggles between light and dark themes dynamically
+
+Example snippet:
+
+const { theme, toggleTheme } = useContext(ThemeContext);
+<Button onClick={toggleTheme}>Toggle Theme</Button>
+
+🔗 API Integration
+
+A placeholder ApiData section is prepared in App.jsx for fetching and displaying public API data (e.g., from JSONPlaceholder
+):
+
+You can extend it to:
+
+Fetch and display API data
+
+Add search functionality
+
+Include pagination or infinite scrolling
+
+🧪 Hooks Used
+Hook	Purpose
+useState	Manage local component state
+useEffect	Handle side effects (saving/loading tasks)
+useContext	Manage theme globally
+useLocalStorage	Custom hook for saving data persistently
+
+🧱 Reusable Components
+Component	Description
+Button.jsx	Styled button with variants (primary, secondary, danger)
+Navbar.jsx	Navigation bar with optional theme toggle
+Footer.jsx	Footer with copyright info
+TaskManager.jsx	Core feature – manages user tasks
+ThemeContext.jsx	Provides global theme state
+
