@@ -1,6 +1,5 @@
 
-PlpTaskManager/
-
+'''PlpTaskManager/
 ├── src/
 │   ├── App.jsx
 │   ├── App.css
@@ -21,6 +20,7 @@ PlpTaskManager/
 ├── package.json
 ├── tailwind.config.js
 └── README.md
+'''
 
 
 ⚙️ Setup Instructions
