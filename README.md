@@ -1,5 +1,6 @@
-![alt text](image.png)
+
 PlpTaskManager/
+
 ├── src/
 │   ├── App.jsx
 │   ├── App.css
